@@ -1,0 +1,40 @@
+---
+interface Props {
+  title: string;
+  status: 'reading' | 'done';
+  url: string;
+}
+
+const { title, status, url } = Astro.props;
+---
+
+<li>
+  <a href={url} class="paper-link" target="_blank" rel="noopener noreferrer">
+    {title}
+    <span class:list={['status', { done: status === 'done' }]}>{status}</span>
+  </a>
+</li>
+
+<style>
+  .paper-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  .paper-link:hover {
+    background-color: #f1f5f9;
+  }
+  .status {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 9999px;
+    background-color: #e2e8f0;
+  }
+  .status.done {
+    background-color: #bbf7d0;
+    color: #166534;
+  }
+</style>

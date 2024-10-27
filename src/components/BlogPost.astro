@@ -1,0 +1,47 @@
+---
+interface Props {
+  title: string;
+  date: string;
+  tags: string[];
+  url: string;
+}
+
+const { title, date, tags, url } = Astro.props;
+---
+
+<article class="post">
+  <h2>
+    <a href={url}>{title}</a>
+  </h2>
+  <div class="post-meta">
+    <span class="date">{date}</span>
+    {tags.map((tag) => <span class="tag">{tag}</span>)}
+  </div>
+</article>
+
+<style>
+  .post {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+  }
+  .post:hover {
+    background-color: var(--card-bg);
+  }
+  .post h2 {
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+  .post-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: #64748b;
+  }
+  .tag {
+    background-color: var(--card-bg);
+    padding: 0.2rem 0.5rem;
+    border-radius: 9999px;
+  }
+</style>

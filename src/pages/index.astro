@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="0_0">
+	<div class="intro">
+		<h1>yo my name is <span class="highlight">chirag</span>!</h1>
+		<!-- <p>i am an undergrad majoring in robotics and ai!</p> -->
+	</div>
+
+	<section class="current">
+		<h2>currently</h2>
+		<p>i am currently in uni and learning about deep learning. </p>
+	</section>
+
+	<section class="interests">
+		<h2>interests</h2>
+		<p>these are the things which interests me and you can dm me if you want to talk about them :)</p>
+		<ul class="interests-list">
+
+			<li>deep learning</li>
+			<li>large language models</li>
+			<li>robotics</li>
+			<li>philosophy</li>
+			<li>space</li>
+			<li>engineering</li>
+		</ul>
+	</section>
+
+	<section class="connect">
+		<h2>let's connect</h2>
+		<ul>
+			<li>
+				<a href="https://x.com/ctxneja" target="_blank">twitter</a>
+			</li>
+			<!-- <li>
+				<a href="https://github.com/yourusername" target="_blank">github</a>
+			</li> -->
+			<!-- <li>
+				<a href="mailto:chiragtaneja.work@gmail.com">mail</a>
+			</li> -->
+		</ul>
+	</section>
+</Layout>
+
+<style>
+	.intro {
+		margin-bottom: 3rem;
+	}
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 0.5rem;
+	}
+	.highlight {
+		color: var(--accent);
+	}
+	section {
+		margin-bottom: 2rem;
+	}
+	h2 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: var(--accent);
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+	li {
+		margin-bottom: 0.5rem;
+	}
+	.interests-list {
+		list-style-type: disc;  /* or use "circle", "square" for different bullet styles */
+		padding-left: 1.5rem;   /* adds some indentation to the list */
+	}
+	.interests-list li {
+		margin-bottom: 0.5rem;
+	}
+</style>

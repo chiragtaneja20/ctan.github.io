@@ -1,0 +1,91 @@
+---
+interface Props {
+  title: string;
+  type: 'paper' | 'book' | 'article';
+  status: 'reading' | 'done';
+  url?: string;
+  hasNotes: boolean;
+  slug: string;
+}
+
+const { title, type, status, url, hasNotes, slug } = Astro.props;
+
+const getTypeEmoji = (type: string) => {
+  switch (type) {
+    case 'paper': return '📄';
+    case 'book': return '📚';
+    case 'article': return '📰';
+    default: return '📝';
+  }
+};
+---
+
+<li class="note-item">
+  <div class="note-content">
+    <span class="type-emoji">{getTypeEmoji(type)}</span>
+    <div class="note-info">
+      <a href={url} class="title" target="_blank" rel="noopener noreferrer">
+        {title}
+      </a>
+      <div class="meta">
+        <span class:list={['status', { done: status === 'done' }]}>{status}</span>
+        {hasNotes && (
+          <a href={`/notes/${slug}`} class="notes-link">
+            📝 Notes
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+</li>
+
+<style>
+  .note-item {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+  }
+  .note-item:hover {
+    background-color: var(--card-bg);
+  }
+  .note-content {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .type-emoji {
+    font-size: 1.5rem;
+  }
+  .note-info {
+    flex-grow: 1;
+  }
+  .title {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+  .meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .status {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 9999px;
+    background-color: var(--card-bg);
+  }
+  .status.done {
+    background-color: #bbf7d0;
+    color: #166534;
+  }
+  .notes-link {
+    font-size: 0.9rem;
+    color: var(--accent);
+  }
+  .notes-link:hover {
+    text-decoration: underline;
+  }
+</style>
