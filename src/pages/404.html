@@ -1,0 +1,83 @@
+---
+// src/pages/404.astro
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 - Page Not Found">
+  <div class="error-container">
+    <h1>404</h1>
+    <img 
+      src="https://i.pinimg.com/736x/c2/5a/a7/c25aa7f3fe1b3dd244dfe43580f7fec8.jpg" 
+      alt="Cute cat 404 image" 
+      class="error-image"
+    />
+    <p>Oops! The page you're looking for has vanished into thin air 🌫️</p>
+    <div class="links">
+      <a href="/" class="home-link">Go Home</a>
+      <a href="/blog" class="blog-link">Visit Blog</a>
+      <a href="/notes" class="notes-link">Browse Notes</a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .error-image {
+    margin: 2rem 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 100%;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 6rem;
+    margin: 0;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin: 1rem 0 2rem;
+    color: #64748b;
+  }
+
+  .links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .links a {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .home-link {
+    background-color: var(--accent);
+    color: white;
+  }
+
+  .blog-link, .notes-link {
+    border: 1px solid var(--accent);
+    color: var(--accent);
+  }
+
+  .links a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+</style>

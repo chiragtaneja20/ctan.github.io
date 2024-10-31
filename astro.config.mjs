@@ -5,6 +5,7 @@ import remarkGfm from 'remark-gfm';
 
 export default defineConfig({
   site: 'https://yourusername.github.io',
+  output: 'static',  // Explicitly set static output
   markdown: {
     remarkPlugins: [remarkMath, remarkGfm],
     rehypePlugins: [rehypeKatex],
@@ -12,5 +13,9 @@ export default defineConfig({
       theme: 'github-light',
       wrap: true
     }
+  },
+  trailingSlash: 'always', // Helps with GitHub Pages routing
+  build: {
+    format: 'file' // Ensures proper file-based routing
   }
 });
