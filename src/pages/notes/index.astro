@@ -23,7 +23,7 @@ const groupedNotes = sortedNotes.reduce((acc, note) => {
   <p class="subtitle">what i have been reading recently</p>
   
   {SITE.workInProgress.notes ? (
-    <p class="wip-message">writing blogsss... work in progress</p>
+    <p class="wip-message">{SITE.wipMessages?.notes || "🌱 Building my beautiful garden... stay tuned!"}</p>
   ) : (
     <div>
       {Object.entries(groupedNotes).map(([type, items]) => (
