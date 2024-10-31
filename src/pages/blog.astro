@@ -13,8 +13,8 @@ const sortedPosts = posts.sort((a, b) =>
 <Layout title="Blog - Chirag">
   <h1>things i write</h1>
   
-  {SITE.workInProgress.blog ? (
-    <p class="wip-message">writing blogsss... work in progress</p>
+  {SITE.workInProgress?.blog ? (
+    <p class="wip-message">{SITE.wipMessages?.blog || "Coming soon..."}</p>
   ) : (
     <section class="blog-posts">
       {sortedPosts.map((post) => (
@@ -37,5 +37,13 @@ const sortedPosts = posts.sort((a, b) =>
   .wip-message {
     color: #64748b;
     font-style: italic;
+    text-align: center;
+    padding: 2rem;
+    background: #f8fafc;
+    border-radius: 8px;
+  }
+  .blog-posts {
+    display: grid;
+    gap: 2rem;
   }
 </style>

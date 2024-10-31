@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { SITE } from '../config';
 ---
 
-<Layout title="0_0">
+<Layout title={SITE.title}>
 	<div class="intro">
 		<h1>yo my name is <span class="highlight">chirag</span>!</h1>
 		<!-- <p>i am an undergrad majoring in robotics and ai!</p> -->
@@ -27,20 +28,18 @@ import Layout from '../layouts/Layout.astro';
 		</ul>
 	</section>
 
-	<section class="connect">
+	<section>
 		<h2>let's connect</h2>
 		<ul>
 			<li>
 				<a href="https://x.com/ctxneja" target="_blank">twitter</a>
 			</li>
-			<!-- <li>
-				<a href="https://github.com/yourusername" target="_blank">github</a>
-			</li> -->
-			<!-- <li>
-				<a href="mailto:chiragtaneja.work@gmail.com">mail</a>
-			</li> -->
 		</ul>
 	</section>
+
+	{SITE.workInProgress.notes && (
+		<p class="wip-message">{SITE.wipMessages.notes}</p>
+	)}
 </Layout>
 
 <style>

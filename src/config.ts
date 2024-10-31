@@ -2,10 +2,13 @@ export const SITE = {
     name: 'Chirag',
     title: 'Chirag - ML Engineer',
     description: "Chirag's personal website",
-    japanese: '光',  // your name in Japanese if you want to keep that style
-    // Add these flags
+    japanese: '光',
     workInProgress: {
-        blog: true,    // Set to false when blog is ready
-        notes: true    // Set to false when notes are ready
+        blog: true,
+        notes: true
+    },
+    wipMessages: {
+        blog: "🚧 Crafting thoughtful blog posts... coming soon!",
+        notes: "📚 Building my digital garden... stay tuned!"
     }
 };
