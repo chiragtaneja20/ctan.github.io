@@ -1,6 +1,6 @@
 export const SITE = {
     name: 'Chirag',
-    title: '光 | Chirag', // Changed title with Japanese character
+    title: '光 | chirag', // Changed title with Japanese character
     description: "Chirag's personal website",
     japanese: '光',
     workInProgress: {
@@ -8,7 +8,7 @@ export const SITE = {
         notes: true
     },
     wipMessages: {
-        blog: "🚧 Crafting thoughtful blog posts... coming soon!",
-        notes: "🌱 Building my beautiful garden... stay tuned!"
+        blog: "🚧 wip!",
+        notes: "🌱 wip!"
     }
 };

@@ -37,13 +37,16 @@ const faviconUrl = 'https://i.pinimg.com/564x/6f/e1/d0/6fe1d074ab0c081b5291d17ff
 
 <style is:global>
 	:root {
-		--accent: #22c55e;
-		--background: #ffffff;
-		--text: #0f172a;
-		--nav-bg: #ffffff;
-		--card-bg: #f1f5f9;
-		--border-color: #e2e8f0;
-		--text-muted: #64748b;
+		--accent: #64748b;             /* Changed from green to slate-500 */
+		--accent-light: #94a3b8;       /* slate-400 */
+		--background: #f8fafc;         /* slate-50 */
+		--text: #0f172a;              /* slate-900 */
+		--nav-bg: #ffffff;            /* white */
+		--card-bg: #f1f5f9;          /* slate-100 */
+		--border-color: #e2e8f0;      /* slate-200 */
+		--text-muted: #64748b;        /* slate-500 */
+		--success: #475569;           /* slate-600 - for status.done */
+		--success-bg: #e2e8f0;        /* slate-200 - for status.done background */
 	}
 
 	html {
@@ -98,5 +101,17 @@ const faviconUrl = 'https://i.pinimg.com/564x/6f/e1/d0/6fe1d074ab0c081b5291d17ff
 		max-width: 800px;
 		margin: 0 auto;
 		padding: 2rem 1rem;
+	}
+
+	/* Global WIP Message Styles */
+	.wip-message {
+		font-size: 1.25rem;
+		color: var(--text-muted);
+		background-color: var(--card-bg);
+		padding: 1rem;
+		border-radius: 8px;
+		text-align: center;
+		margin: 2rem 0;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	}
 </style>

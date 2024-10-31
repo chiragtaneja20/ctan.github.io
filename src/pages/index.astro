@@ -1,75 +1,175 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { SITE } from '../config';
+
+const imageUrl = "https://i.pinimg.com/564x/77/e6/eb/77e6eb6e7e9db914a437825f89d4a22e.jpg";
 ---
 
 <Layout title={SITE.title}>
-	<div class="intro">
-		<h1>yo my name is <span class="highlight">chirag</span>!</h1>
-		<!-- <p>i am an undergrad majoring in robotics and ai!</p> -->
-	</div>
+  <div class="container">
+    <div class="image-container">
+      <img 
+        src={imageUrl}
+        alt="Banner image"
+        loading="lazy"
+        class="banner-image"
+      />
+    </div>
 
-	<section class="current">
-		<h2>currently</h2>
-		<p>i am currently in uni and learning about deep learning. </p>
-	</section>
+    <div class="intro">
+      <h1>yo, i am <span class="highlight">chirag</span>!</h1>
+    </div>
+    
+    <section class="current">
+      <h2>currently</h2>
+      <p>i’m currently navigating university life, diving into all sorts of fields, and right now, learning to breathe life into deep learning models</p>
+    </section>
 
-	<section class="interests">
-		<h2>interests</h2>
-		<p>these are the things which interests me and you can dm me if you want to talk about them :)</p>
-		<ul class="interests-list">
+    <section class="interests">
+      <h2>interests</h2>
+      <p>these are the things which interest me, <a href="https://x.com/ctxneja" target="_blank" class="x-link">dm me</a> if you want to talk about them :)</p>
+      <ul class="interests-list">
+        <li>deep learning</li>
+        <li>robotics</li>
+        <li>philosophy</li>
+        <li>space</li>
+        <li>engineering</li>
+      </ul>
+    </section>
 
-			<li>deep learning</li>
-			<li>large language models</li>
-			<li>robotics</li>
-			<li>philosophy</li>
-			<li>space</li>
-			<li>engineering</li>
-		</ul>
-	</section>
-
-	<section>
-		<h2>let's connect</h2>
-		<ul>
-			<li>
-				<a href="https://x.com/ctxneja" target="_blank">twitter</a>
-			</li>
-		</ul>
-	</section>
-
+    
+  </div>
 </Layout>
 
 <style>
-	.intro {
-		margin-bottom: 3rem;
-	}
-	h1 {
-		font-size: 2.5rem;
-		margin-bottom: 0.5rem;
-	}
-	.highlight {
-		color: var(--accent);
-	}
-	section {
-		margin-bottom: 2rem;
-	}
-	h2 {
-		font-size: 1.5rem;
-		margin-bottom: 1rem;
-		color: var(--accent);
-	}
-	ul {
-		list-style: none;
-		padding: 0;
-	}
-	li {
-		margin-bottom: 0.5rem;
-	}
-	.interests-list {
-		list-style-type: disc;  /* or use "circle", "square" for different bullet styles */
-		padding-left: 1.5rem;   /* adds some indentation to the list */
-	}
-	.interests-list li {
-		margin-bottom: 0.5rem;
-	}
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .image-container {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 2rem;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .banner-image:hover {
+    transform: scale(1.02);
+  }
+
+  .intro {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .intro h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .highlight {
+    color: var(--accent);
+  }
+
+  section {
+    margin: rem 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0 rem;
+    color: var(--accent);
+  }
+
+  p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 0 rem;
+  }
+
+  .interests-list {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    list-style-type: disc;
+    padding-left: 2rem;
+  }
+
+  .interests-list li {
+    margin-bottom: 0 rem;
+  }
+
+  .x-link {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .x-link:hover {
+    text-decoration: underline;
+  }
+
+  .connect ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .connect li {
+    margin-bottom: 0 rem;
+  }
+
+  .connect a {
+    font-size: 1.25rem;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 0rem 0rem;
+    /* border: 2px solid var(--accent); */
+    /* border-radius: 9999px; */
+    /* transition: all 0.2s ease; */
+  }
+
+  /* .connect a:hover {
+    background-color: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+  } */
+
+  @media (max-width: 768px) {
+    .intro h1 {
+      font-size: 2.5rem;
+    }
+    
+    h2 {
+      font-size: 1.75rem;
+    }
+
+    p, .interests-list {
+      font-size: 1.1rem;
+    }
+
+    section {
+      margin: 2rem 0;
+    }
+
+    .image-container {
+      height: 150px;
+      margin-bottom: 1.5rem;
+    }
+
+    .connect a {
+      font-size: 1.1rem;
+    }
+  }
 </style>

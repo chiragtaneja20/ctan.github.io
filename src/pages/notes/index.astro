@@ -18,9 +18,9 @@ const groupedNotes = sortedNotes.reduce((acc, note) => {
 }, {} as Record<string, typeof notes>);
 ---
 
-<Layout title="Notes and Stuff - Chirag">
+<Layout title="notes and stuff - chirag">
   <h1>notes and stuff</h1>
-  <p class="subtitle">what i have been reading recently</p>
+  <!-- <p class="subtitle">what i have been reading recently</p> -->
   
   {SITE.workInProgress.notes ? (
     <p class="wip-message">{SITE.wipMessages?.notes || "🌱 Building my beautiful garden... stay tuned!"}</p>

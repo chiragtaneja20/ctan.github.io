@@ -76,10 +76,11 @@ const getTypeEmoji = (type: string) => {
     padding: 0.2rem 0.5rem;
     border-radius: 9999px;
     background-color: var(--card-bg);
+    color: var(--text-muted);
   }
   .status.done {
-    background-color: #bbf7d0;
-    color: #166534;
+    background-color: var(--success-bg);
+    color: var(--success);
   }
   .notes-link {
     font-size: 0.9rem;
@@ -87,5 +88,8 @@ const getTypeEmoji = (type: string) => {
   }
   .notes-link:hover {
     text-decoration: underline;
+  }
+  .note-item:hover, .paper-link:hover {
+    background-color: var(--card-bg);
   }
 </style>

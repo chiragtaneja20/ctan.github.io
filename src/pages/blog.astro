@@ -10,21 +10,23 @@ const sortedPosts = posts.sort((a, b) =>
 );
 ---
 
-<Layout title="Blog - Chirag">
-  <h1>things i write</h1>
+<Layout title="blog">
+  <h1>blog</h1>
   
   {SITE.workInProgress?.blog ? (
     <p class="wip-message">{SITE.wipMessages?.blog || "Coming soon..."}</p>
   ) : (
-    <section class="blog-posts">
-      {sortedPosts.map((post) => (
-        <BlogPost
-          title={post.data.title}
-          date={post.data.date}
-          tags={post.data.tags}
-          url={`/blog/${post.slug}`}
-        />
-      ))}
+    <section class="blog-section">
+      <ul class="blog-list">
+        {sortedPosts.map((post) => (
+          <BlogPost
+            title={post.data.title}
+            date={post.data.date}
+            tags={post.data.tags}
+            url={`/blog/${post.slug}`}
+          />
+        ))}
+      </ul>
     </section>
   )}
 </Layout>
@@ -32,18 +34,17 @@ const sortedPosts = posts.sort((a, b) =>
 <style>
   h1 {
     font-size: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
   }
   .wip-message {
-    color: #64748b;
+    color: var(--text-muted);
     font-style: italic;
-    text-align: center;
-    padding: 2rem;
-    background: #f8fafc;
-    border-radius: 8px;
   }
-  .blog-posts {
-    display: grid;
-    gap: 2rem;
+  .blog-section {
+    margin-bottom: 3rem;
+  }
+  .blog-list {
+    list-style: none;
+    padding: 0;
   }
 </style>
